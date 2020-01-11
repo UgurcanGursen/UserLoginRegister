@@ -16,13 +16,17 @@ import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
-@RequestMapping("/token")
+@RequestMapping("/u/token")
 public class AccountController {
 
 
+    @Autowired
     private AuthenticationManager authenticationManager;
+    @Autowired
     private JwtTokenUtil jwtTokenUtil;
+    @Autowired
     private UserRepository userRepository;
+    @Autowired
     private UserServiceImpl userService;
 
     @RequestMapping(method = RequestMethod.POST)
